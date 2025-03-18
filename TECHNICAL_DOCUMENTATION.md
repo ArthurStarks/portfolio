@@ -10,6 +10,9 @@ This project is a modern, interactive website showcasing Brazzaville, the capita
 - GSAP (GreenSock Animation Platform) v3.12.3
 - Phosphor Icons
 - Google Fonts (Inter & Playfair Display)
+- Node.js (Development Environment)
+- http-server (Development Server)
+- nodemon (Live Reload)
 
 ## Project Structure
 ```
@@ -18,12 +21,48 @@ portfolio/
 ├── styles.css          # Main stylesheet
 ├── js/
 │   └── main.js        # JavaScript functionality
+├── package.json       # Node.js configuration
+├── .gitignore        # Git ignore rules
 └── images/
     ├── brazzaville-1.jpg
     ├── brazzaville-2.jpg
     ├── brazzaville-3.jpg
     └── arthur_site.png
 ```
+
+## Development Environment Setup
+
+### Prerequisites
+1. Node.js (v14 or higher)
+2. Modern web browser
+3. Code editor (VS Code recommended)
+
+### Installation Steps
+1. Install Node.js:
+   - Download from https://nodejs.org/
+   - Choose LTS version
+   - Follow installation wizard
+
+2. Clone the repository:
+   ```bash
+   git clone [repository-url]
+   cd portfolio
+   ```
+
+3. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+4. Start development server:
+   ```bash
+   npm run dev
+   ```
+
+### Available Scripts
+- `npm start`: Runs http-server on port 8000
+- `npm run dev`: Runs development server with live reload
+- `npm run build`: Placeholder for future build process
 
 ## Key Features Implementation
 
@@ -46,40 +85,7 @@ portfolio/
 - Optimized GSAP animations
 - Efficient event listeners
 - Smooth scrolling implementation
-
-## Setup Instructions
-
-### Prerequisites
-1. Node.js (v14 or higher)
-2. Modern web browser
-3. Code editor (VS Code recommended)
-
-### Local Development Setup
-1. Clone the repository:
-   ```bash
-   git clone [repository-url]
-   cd portfolio
-   ```
-
-2. Install dependencies (if using npm):
-   ```bash
-   npm install
-   ```
-
-3. Start local server:
-   ```bash
-   # Using Node.js http-server
-   npx http-server
-   
-   # Or using VS Code Live Server
-   # Right-click index.html -> Open with Live Server
-   ```
-
-### Image Requirements
-- `brazzaville-1.jpg`: 1920x1080px (recommended)
-- `brazzaville-2.jpg`: 1920x1080px (recommended)
-- `brazzaville-3.jpg`: 1920x1080px (recommended)
-- `arthur_site.png`: 1200x800px (recommended)
+- Node.js server optimization
 
 ## Browser Support
 - Chrome (latest)
@@ -101,6 +107,10 @@ portfolio/
    - Solution: Implement touch event handlers
    - Test on various mobile devices
 
+3. Node.js Server Issues
+   - Solution: Check port availability
+   - Ensure proper Node.js version
+
 ## Maintenance Guidelines
 1. Code Organization
    - Follow existing file structure
@@ -117,6 +127,11 @@ portfolio/
    - Use appropriate formats (JPG for photos, PNG for graphics)
    - Implement lazy loading
 
+4. Node.js Maintenance
+   - Keep dependencies updated
+   - Monitor server performance
+   - Check for security updates
+
 ## Deployment Checklist
 1. [ ] Optimize all images
 2. [ ] Minify CSS and JavaScript
@@ -127,6 +142,9 @@ portfolio/
 7. [ ] Test all interactive features
 8. [ ] Verify loading times
 9. [ ] Check accessibility compliance
+10. [ ] Verify Node.js environment
+11. [ ] Test development server
+12. [ ] Check all npm scripts
 
 ## Contact Information
 - Developer: Arthur Starks (Ray Emmanuel Bsk)
@@ -138,6 +156,7 @@ portfolio/
 - v1.1.0: Added GSAP animations
 - v1.2.0: Enhanced responsive design
 - v1.3.0: Project name updates and performance improvements
+- v1.4.0: Added Node.js development environment
 
 ## License
 [Your License Information]
