@@ -1,24 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Balises meta pour l'encodage des caractères et la vue responsive -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Feuille de style externe et bibliothèque d'icônes -->
     <link rel="stylesheet" href="style.css">
     <script src="https://unpkg.com/aphosphor-icons/web"></script>
     <title>RAY-BSK</title>
 </head>
 <body>
-
+    <!-- Barre de navigation avec logo et bouton de contact -->
     <div class="nav">
         <p class="logo">Ray Emmanuel Bsk</p>
         <p>Me Contacter</p>
     </div>
 
+    <!-- Section pied de page avec informations de copyright -->
     <div class="footer">
         <p>Ray Emmanuel Bsk - 2023 &copy;</p>
     </div>
 
+    <!-- Overlay/modal des détails du projet -->
     <div class="overlay">
+        <!-- En-tête de l'overlay avec titre du projet et bouton de fermeture -->
         <div class="overlay-header">
             <div class="col">
                 <h1 id="project-name">Nom Du Projet</h1>
@@ -28,10 +34,12 @@
                 <p id="close-btn"> &#9747; Fermer</p>
             </div>
         </div>
+        
+        <!-- Section des détails du projet avec lien et description -->
         <div class="project-details">
             <p>
                 <a href="#" target="_blank" id="project-link"> 
-                    <span class="arrow-up-icon">&#8599;<!--&#10532;--></span>
+                    <span class="arrow-up-icon">&#8599;</span>
                     Voir Le Site
                 </a>
             </p>
@@ -42,18 +50,23 @@
                 eaque consectetur adipisci!
             </p>
         </div>
+        
+        <!-- Conteneur de l'image du projet -->
         <div class="img-container">
             <img src="/images/koar_site.png" alt="image du projet" id="project-img">
         </div>
     </div>
 
+    <!-- Conteneur principal avec la liste des projets -->
     <div class="container">
         <div class="items">
+            <!-- Projet 1 -->
             <div class="item">
                 <div class="item-index">01</div>
                 <div class="item-name">&#8599; &nbsp;&nbsp;&nbsp;KOAR®</div>
                 <div class="item-year">2022</div>
             </div>
+            <!-- Projet 2 -->
             <div class="item">
                 <div class="item-index">02</div>
                 <div class="item-name">&#8599; &nbsp;&nbsp;&nbsp;Mitcha Immobilier</div>
@@ -62,7 +75,10 @@
         </div>
     </div>
 
+    <!-- Bibliothèques JavaScript externes -->
+    <!-- GSAP pour les animations -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.3/gsap.min.js"></script> 
+    <!-- Fichier JavaScript principal -->
     <script type="module" src="./js/main.js"></script>  
 </body>
 </html>
