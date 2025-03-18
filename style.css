@@ -1,156 +1,235 @@
-*,
-::before,
-::after{
-    box-sizing: border-box;
+/* 
+    Brazzaville - Ville Culturelle
+    Auteur: Arthur Starks (Ray Emmanuel Bsk)
+    Date: 2023
+    Description: Styles pour la présentation de Brazzaville
+    Technologies: CSS3, GSAP
+*/
+
+/* Importation des polices Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@400;500;600&display=swap');
+
+/* Variables CSS globales */
+:root {
+    /* Couleurs principales */
+    --color-primary: #1a1a1a;
+    --color-secondary: #ffffff;
+    --color-accent: #e63946;
+    
+    /* Couleurs de fond */
+    --bg-primary: #ffffff;
+    --bg-secondary: #f8f9fa;
+    
+    /* Couleurs de texte */
+    --text-primary: #1a1a1a;
+    --text-secondary: #4a4a4a;
+    
+    /* Couleurs d'interface */
+    --nav-bg: rgba(255, 255, 255, 0.95);
+    
+    /* Typographie */
+    --font-primary: 'Inter', sans-serif;
+    --font-secondary: 'Playfair Display', serif;
+    
+    /* Espacement et dimensions */
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 1rem;
+    --spacing-md: 2rem;
+    --spacing-lg: 4rem;
+    --max-width: 1200px;
+    
+    /* Transitions et animations */
+    --transition-speed: 0.3s;
+    --transition-timing: cubic-bezier(0.4, 0, 0.2, 1);
+    
+    /* Ombres */
+    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+    --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Reset et styles de base */
+* {
     margin: 0;
     padding: 0;
-    transition: ease-out;
+    box-sizing: border-box;
 }
 
-html, body{
-    width: 100vw;
-    height: 100vh;
-    overflow: hidden;
-    /* font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; */
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    background: #0f0f0f;
-    color: #fff;
-}
-
-h1{
-    font-weight: 500;
-    margin-bottom: 0.5em;
-}
-
-a{
-    text-decoration: none;
-    color: #000;
-}
-
-.container{
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: flex-start;
-    align-items: flex-end;
-    padding: 2em;
-}
-
-.nav{
-    position: fixed;
-    width: 100%;
-    padding: 2em;
-    display: flex;
-    justify-content: space-between;
-}
-
-.footer{
-    position: fixed;
-    bottom: 0;
-    right: 0;
-    padding: 2em;
-}
-
-.items{
-    position: absolute;
-    width: 50%;
-    display: flex;
-    flex-direction: column;
-}
-
-.item{
-    display: flex;
-    padding: 0.25em 0.5em;
-    cursor: pointer;
-}
-
-.item-index{
-    flex: 1;
-}
-
-.item-name{
-    flex: 4;
-}
-
-.item-year{
-    flex: 1;
-}
-
-.overlay{
-    position: absolute;
-    bottom: -1200px;
-    right: 0;
-    width: 70%;
-    height: 80%;
-    padding: 2em;
-    background: #fff;
-    color: #000;
+body {
+    font-family: var(--font-primary);
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    line-height: 1.6;
     overflow-x: hidden;
-    overflow-y: scroll;
-    z-index: 2;
-    will-change: bottom;
-    transform: translateZ(0) rotate(20deg);
-    transform-origin: bottom center;
 }
 
-.overlay::-webkit-scrollbar{
-    display: none;
-}
-
-.img-container{
+/* Navigation */
+.nav {
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
-    padding-bottom: 2em;
+    padding: var(--spacing-sm) var(--spacing-md);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--nav-bg);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    box-shadow: var(--shadow-sm);
 }
 
-img{
+.logo {
+    font-family: var(--font-secondary);
+    font-weight: 600;
+    font-size: 1.5rem;
+    transition: color var(--transition-speed) var(--transition-timing);
+}
+
+.logo:hover {
+    color: var(--color-accent);
+}
+
+/* Section Brazzaville */
+.brazzaville-section {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--spacing-lg);
+    background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+}
+
+.brazzaville-content {
+    max-width: var(--max-width);
+    text-align: center;
+}
+
+.brazzaville-content h2 {
+    font-family: var(--font-secondary);
+    font-size: 4rem;
+    margin-bottom: var(--spacing-md);
+    color: var(--text-primary);
+}
+
+.brazzaville-description {
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+    max-width: 800px;
+    margin: 0 auto var(--spacing-lg);
+}
+
+/* Galerie d'images de Brazzaville */
+.brazzaville-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-lg);
+    padding: 0 var(--spacing-md);
+}
+
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: var(--shadow-md);
+    transition: transform var(--transition-speed) var(--transition-timing);
+}
+
+.gallery-item:hover {
+    transform: translateY(-5px);
+}
+
+.gallery-item img {
     width: 100%;
-    height: 100%;
+    height: 300px;
     object-fit: cover;
+    display: block;
 }
 
-.overlay-header{
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-    padding: 2em 0;
+.gallery-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+    color: var(--color-secondary);
+    padding: var(--spacing-sm);
+    font-size: 1rem;
+    transform: translateY(100%);
+    transition: transform var(--transition-speed) var(--transition-timing);
 }
 
-.col:nth-child(1){
-    flex: 3;
+.gallery-item:hover .gallery-caption {
+    transform: translateY(0);
 }
 
-.col:nth-child(2){
-    flex: 2;
+/* Informations supplémentaires */
+.brazzaville-info {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-lg);
+    padding: 0 var(--spacing-md);
 }
 
-#close-btn{
-    cursor: pointer;
-    opacity: 0.7;
+.info-card {
+    background: var(--bg-primary);
+    padding: var(--spacing-md);
+    border-radius: 12px;
+    box-shadow: var(--shadow-sm);
+    transition: transform var(--transition-speed) var(--transition-timing);
 }
 
-.project-details{
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    padding: 1em 0 4em 0;
+.info-card:hover {
+    transform: translateY(-5px);
 }
 
-.project-details p:nth-child(1){
-    flex: 3;
+.info-card h3 {
+    font-family: var(--font-secondary);
+    font-size: 1.5rem;
+    margin-bottom: var(--spacing-sm);
+    color: var(--text-primary);
 }
 
-.project-details p:nth-child(2){
-    flex: 2;
+.info-card p {
+    color: var(--text-secondary);
+    font-size: 1rem;
 }
 
-@media (max-width: 900px){
-    .items{
-        width: 100%;
+/* Footer */
+.footer {
+    text-align: center;
+    padding: var(--spacing-md);
+    background-color: var(--bg-secondary);
+    color: var(--text-secondary);
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .brazzaville-content h2 {
+        font-size: 2.5rem;
     }
 
-    .overlay{
-        width: 100%;
-        height: 100vh;
+    .brazzaville-description {
+        font-size: 1rem;
+        padding: 0 var(--spacing-sm);
+    }
+
+    .brazzaville-gallery {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-sm);
+    }
+
+    .gallery-item img {
+        height: 250px;
+    }
+
+    .brazzaville-info {
+        grid-template-columns: 1fr;
+    }
+
+    .info-card {
+        padding: var(--spacing-sm);
     }
 }

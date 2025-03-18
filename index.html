@@ -1,84 +1,152 @@
+<!-- 
+    Brazzaville - Ville Culturelle
+    Auteur: Arthur Starks (Ray Emmanuel Bsk)
+    Date: 2023
+    Description: Site de présentation de Brazzaville, capitale du Congo
+    Technologies: HTML5, CSS3, JavaScript, GSAP
+-->
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <!-- Balises meta pour l'encodage des caractères et la vue responsive -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <!-- Feuille de style externe et bibliothèque d'icônes -->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles.css">
     <script src="https://unpkg.com/aphosphor-icons/web"></script>
-    <title>RAY-BSK</title>
+    <title>Brazzaville - Ville Culturelle</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
     <!-- Barre de navigation avec logo et bouton de contact -->
-    <div class="nav">
-        <p class="logo">Ray Emmanuel Bsk</p>
-        <p>Me Contacter</p>
-    </div>
+    <nav class="nav">
+        <div class="logo">Brazzaville</div>
+    </nav>
 
-    <!-- Section pied de page avec informations de copyright -->
-    <div class="footer">
-        <p>Ray Emmanuel Bsk - 2023 &copy;</p>
-    </div>
+    <!-- Section principale de Brazzaville -->
+    <section class="brazzaville-section">
+        <div class="brazzaville-content">
+            <h2>Brazzaville</h2>
+            <p class="brazzaville-description">
+                Capitale du Congo, Brazzaville est une ville où tradition et modernité se rencontrent harmonieusement. 
+                Nichée sur les rives du fleuve Congo, elle offre un mélange unique d'histoire, de culture et d'innovation.
+            </p>
+            
+            <!-- Galerie d'images de Brazzaville -->
+            <div class="brazzaville-gallery">
+                <div class="gallery-item">
+                    <img src="images/brazzaville-1.jpg" alt="Vue de Brazzaville">
+                    <div class="gallery-caption">Centre-ville de Brazzaville</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/brazzaville-2.jpg" alt="Culture de Brazzaville">
+                    <div class="gallery-caption">Culture et traditions</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/brazzaville-3.jpg" alt="Architecture de Brazzaville">
+                    <div class="gallery-caption">Architecture moderne</div>
+                </div>
+            </div>
 
-    <!-- Overlay/modal des détails du projet -->
+            <!-- Informations supplémentaires sur Brazzaville -->
+            <div class="brazzaville-info">
+                <div class="info-card">
+                    <h3>Histoire</h3>
+                    <p>Fondée en 1880 par l'explorateur Pierre Savorgnan de Brazza, la ville est devenue un centre culturel et économique majeur.</p>
+                </div>
+                <div class="info-card">
+                    <h3>Culture</h3>
+                    <p>Riche en traditions, la ville abrite de nombreux musées, galeries d'art et centres culturels qui célèbrent le patrimoine congolais.</p>
+                </div>
+                <div class="info-card">
+                    <h3>Innovation</h3>
+                    <p>Brazzaville est en constante évolution, combinant son héritage historique avec des initiatives modernes de développement urbain.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer dynamique avec animation de défilement -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-text">
+                <div class="scrolling-capitals">
+                    <span class="capital">Brazzaville 🇨🇬</span>
+                    <span class="capital">Kinshasa 🇨🇩</span>
+                    <span class="capital">Addis Abeba 🇪🇹</span>
+                    <span class="capital">Nairobi 🇰🇪</span>
+                    <span class="capital">Dakar 🇸🇳</span>
+                    <span class="capital">Accra 🇬🇭</span>
+                    <span class="capital">Kigali 🇷🇼</span>
+                    <span class="capital">Lagos 🇳🇬</span>
+                    <span class="capital">Cairo 🇪🇬</span>
+                    <span class="capital">Pretoria 🇿🇦</span>
+                </div>
+                <p class="question">Quelle capitale africaine devrions-nous explorer ensuite ? 🤔</p>
+            </div>
+            <div class="footer-scroll">
+                <span class="scroll-text">Défiler vers le haut</span>
+                <div class="scroll-arrow">↑</div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Overlay/modal des détails du projet - Interface interactive -->
     <div class="overlay">
         <!-- En-tête de l'overlay avec titre du projet et bouton de fermeture -->
-        <div class="overlay-header">
+        <header class="overlay-header">
             <div class="col">
                 <h1 id="project-name">Nom Du Projet</h1>
                 <p id="project-category">Categorie Du Projet</p>
             </div>
             <div class="col">
-                <p id="close-btn"> &#9747; Fermer</p>
+                <button id="close-btn" aria-label="Fermer">&#9747;</button>
             </div>
-        </div>
+        </header>
         
         <!-- Section des détails du projet avec lien et description -->
         <div class="project-details">
-            <p>
-                <a href="#" target="_blank" id="project-link"> 
-                    <span class="arrow-up-icon">&#8599;</span>
-                    Voir Le Site
-                </a>
-            </p>
+            <a href="#" target="_blank" id="project-link" class="project-link"> 
+                <span class="arrow-up-icon">&#8599;</span>
+                Découvrir le Projet
+            </a>
             <p id="project-desc">
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
-                Numquam quae tempore, nemo culpa, deserunt aliquid autem 
-                perferendis pariatur officiis exercitationem similique at 
-                eaque consectetur adipisci!
+                Une expérience digitale unique, fusionnant créativité et innovation. 
+                Chaque projet raconte une histoire, chaque ligne de code est une note 
+                dans la symphonie du design numérique.
             </p>
         </div>
         
-        <!-- Conteneur de l'image du projet -->
+        <!-- Conteneur de l'image du projet avec animation de chargement -->
         <div class="img-container">
-            <img src="/images/koar_site.png" alt="image du projet" id="project-img">
+            <img src="images/arthur_site.png" alt="image du projet" id="project-img" loading="lazy">
         </div>
     </div>
 
     <!-- Conteneur principal avec la liste des projets -->
-    <div class="container">
+    <main class="container">
         <div class="items">
-            <!-- Projet 1 -->
-            <div class="item">
+            <!-- Projet 1 - @ArthurStarks -->
+            <article class="item" data-project="arthur">
                 <div class="item-index">01</div>
-                <div class="item-name">&#8599; &nbsp;&nbsp;&nbsp;KOAR®</div>
+                <div class="item-name">&#8599; &nbsp;&nbsp;&nbsp;@ArthurStarks</div>
                 <div class="item-year">2022</div>
-            </div>
-            <!-- Projet 2 -->
-            <div class="item">
+            </article>
+            <!-- Projet 2 - @ArthurStarks -->
+            <article class="item" data-project="arthur2">
                 <div class="item-index">02</div>
-                <div class="item-name">&#8599; &nbsp;&nbsp;&nbsp;Mitcha Immobilier</div>
+                <div class="item-name">&#8599; &nbsp;&nbsp;&nbsp;@ArthurStarks</div>
                 <div class="item-year">2023</div>
-            </div>
+            </article>
         </div>
-    </div>
+    </main>
 
     <!-- Bibliothèques JavaScript externes -->
-    <!-- GSAP pour les animations -->
+    <!-- GSAP pour les animations fluides -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.3/gsap.min.js"></script> 
-    <!-- Fichier JavaScript principal -->
+    <!-- Fichier JavaScript principal - Gestion des interactions -->
     <script type="module" src="./js/main.js"></script>  
 </body>
 </html>
